@@ -10,24 +10,45 @@
 <script>
     $(document).ready(function() {
        $("#btn").click(function(event){
-/*
-        $('table').append('<caption id="showcaption"></caption>');
-        $('showcaption').append('<caption></caption>');
-        $.getJSON('data.json', function(jqdata) {
-            $('#showcaption').append(title);
-*/
+
+        $('table').append('<caption id="showcaption"> Calories Comparison of Popular Burgers </caption>');
+
         //Add heading element within the table
         $('table').append('<tr id="showheading"></tr>');
+        $('#showheading').append('<th></th>');
+        $('#showheading').append('<th></th>');
+        $('#showheading').append('<th></th>');
+        $('#showheading').append('<th></th>');
+        $('#showheading').append('<th></th>');
 
-        //Add paragraph elements within the th
-        $('#showheading').append('<th></th>');
-        $('#showheading').append('<th></th>');
-        $('#showheading').append('<th></th>');
-        $('#showheading').append('<th></th>');
-        $('#showheading').append('<th></th>');
+        //Add calories element within the table
+        $('table').append('<tr id="showcalories"></tr>');
+        $('#showcalories').append('<td></td>');
+        $('#showcalories').append('<td></td>');
+        $('#showcalories').append('<td></td>');
+        $('#showcalories').append('<td></td>');
+        $('#showcalories').append('<td></td>');
+
+        //Add fat element within the table
+        $('table').append('<tr id="showfat"></tr>');
+        $('#showfat').append('<td></td>');
+        $('#showfat').append('<td></td>');
+        $('#showfat').append('<td></td>');
+        $('#showfat').append('<td></td>');
+        $('#showfat').append('<td></td>');
+
+        //Add fat element within the table
+        $('table').append('<tr id="showven"></tr>');
+        $('#showven').append('<td></td>');
+        $('#showven').append('<td></td>');
+        $('#showven').append('<td></td>');
+        $('#showven').append('<td></td>');
+        $('#showven').append('<td></td>');
 
         //Load data from json file to each paragraphs
         $.getJSON('data.json', function(jqdata) {
+
+            $('#showcaption th:first-child').append(jqdata.title);
 
             $('#showheading th:first-child').append(jqdata.heading);
             $('#showheading th:nth-child(2)').append(jqdata.head1);
@@ -35,60 +56,17 @@
             $('#showheading th:nth-child(4)').append(jqdata.head3);
             $('#showheading th:last-child').append(jqdata.head4);
 
-        });
-
-        //Add calories element within the table
-        $('table').append('<tr id="showcalories"></tr>');
-
-        //Add paragraph elements within the tr
-        $('#showcalories').append('<td></td>');
-        $('#showcalories').append('<td></td>');
-        $('#showcalories').append('<td></td>');
-        $('#showcalories').append('<td></td>');
-        $('#showcalories').append('<td></td>');
-
-        //Load data from json file to each paragraphs
-        $.getJSON('data.json', function(jqdata) {
-
             $('#showcalories td:first-child').append(jqdata.subheadcal);
             $('#showcalories td:nth-child(2)').append(jqdata.cal1);
             $('#showcalories td:nth-child(3)').append(jqdata.cal2);
             $('#showcalories td:nth-child(4)').append(jqdata.cal3);
             $('#showcalories td:last-child').append(jqdata.cal4);
-        });
-
-        //Add fat element within the table
-        $('table').append('<tr id="showfat"></tr>');
-
-        //Add paragraph elements within the tr
-        $('#showfat').append('<td></td>');
-        $('#showfat').append('<td></td>');
-        $('#showfat').append('<td></td>');
-        $('#showfat').append('<td></td>');
-        $('#showfat').append('<td></td>');
-
-        //Load data from json file to each paragraphs
-        $.getJSON('data.json', function(jqdata) {
 
             $('#showfat td:first-child').append(jqdata.subheadfat);
             $('#showfat td:nth-child(2)').append(jqdata.fat1);
             $('#showfat td:nth-child(3)').append(jqdata.fat2);
             $('#showfat td:nth-child(4)').append(jqdata.fat3);
             $('#showfat td:last-child').append(jqdata.fat4);
-        });
-
-        //Add fat element within the table
-        $('table').append('<tr id="showven"></tr>');
-
-        //Add paragraph elements within the tr
-        $('#showven').append('<td></td>');
-        $('#showven').append('<td></td>');
-        $('#showven').append('<td></td>');
-        $('#showven').append('<td></td>');
-        $('#showven').append('<td></td>');
-
-        //Load data from json file to each paragraphs
-        $.getJSON('data.json', function(jqdata) {
 
             $('#showven td:first-child').append(jqdata.subheadven);
             $('#showven td:nth-child(2)').append(jqdata.ven1);
